@@ -68,6 +68,14 @@
       *ngIf="signupForm.get('userName').errors?.maxlength"
       text="Maximum length is 30!">
     </ap-vmessage>
+
+    <ap-vmessage
+      *ngIf="signupForm.get('userName').errors?.userNameTaken"
+      text="User name already taken">
+    </ap-vmessage>
+    <small
+      *ngIf="signupForm.get('userName').valid"
+      class="text-success">User available</small>
   </div>
 
   <div
@@ -93,6 +101,7 @@
   </div>
 
   <button
+    [disabled]="signupForm.invalid || signupForm.pending"
     class="btn btn-primary btn-block">Register
   </button>
 
