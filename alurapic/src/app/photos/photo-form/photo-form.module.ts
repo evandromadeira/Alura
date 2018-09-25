@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { VMessageModule } from '../../shared/components/vmessage/vmessage.module';
 import { PhotoFormComponent } from './photo-form.component';
 import { PhotoComponent } from '../photo/photo.component';
+import { PhotoModule } from '../photo/photo.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhotoComponent } from '../photo/photo.component';
     ReactiveFormsModule,
     VMessageModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    PhotoModule
   ]
 })
 export class PhotoFormModule { }
