@@ -4,15 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\core",
-    "\\src\\app\\core\\auth",
-    "\\src\\app\\core\\header",
+    "\\src\\app\\core\\footer",
     "\\src\\app\\home",
-    "\\src\\app\\home\\signin",
     "\\src\\app\\home\\signup",
-    "\\src\\app\\photos\\photo",
-    "\\src\\app\\shared",
-    "\\src\\app\\shared\\validators"
+    "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\home\\signup\\signup.ts",
+  "SelectedNode": "\\src\\app\\core\\footer\\footer.component.html",
   "PreviewInSolutionExplorer": false
 }

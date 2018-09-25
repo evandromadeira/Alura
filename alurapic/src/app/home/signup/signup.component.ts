@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 import { NewUser } from './signup';
 
 @Component({
-  templateUrl: './signup.component.html'
+  templateUrl: './signup.component.html',
+  providers: [ UserNotTakenValidatorService ]
 })
 export class SignUpComponent implements OnInit {
 
