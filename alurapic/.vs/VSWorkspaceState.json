@@ -1,8 +1,18 @@
 {
   "ExpandedNodes": [
+    "",
+    "\\src",
     "\\src\\app",
+    "\\src\\app\\core",
+    "\\src\\app\\core\\auth",
+    "\\src\\app\\core\\header",
     "\\src\\app\\home",
-    "\\src\\app\\home\\signin"
+    "\\src\\app\\home\\signin",
+    "\\src\\app\\home\\signup",
+    "\\src\\app\\photos\\photo",
+    "\\src\\app\\shared",
+    "\\src\\app\\shared\\validators"
   ],
+  "SelectedNode": "\\src\\app\\home\\signup\\signup.ts",
   "PreviewInSolutionExplorer": false
 }

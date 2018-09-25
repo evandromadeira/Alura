@@ -11,7 +11,7 @@ import { AuthService } from '../../core/auth/auth.service';
 export class SignInComponent implements OnInit {
 
   loginForm: FormGroup;
-  @ViewChild('userNameInput') userNameImput: ElementRef<HTMLInputElement>;
+  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
 
   constructor(
     private platformDetectorService: PlatformDetectorService,
@@ -25,6 +25,9 @@ export class SignInComponent implements OnInit {
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.platformDetectorService.isPlatformBrowser() &&
+      this.userNameInput.nativeElement.focus();
   }
 
   login() {
@@ -39,7 +42,7 @@ export class SignInComponent implements OnInit {
           console.log(err);
           this.loginForm.reset(); //Para limpar o formulário
           this.platformDetectorService.isPlatformBrowser() &&
-            this.userNameImput.nativeElement.focus();
+            this.userNameInput.nativeElement.focus();
           alert('Invalid user name or password!');
         }
       );
