@@ -10,6 +10,7 @@
         *ngIf="!preview; else previewImage">
 
         <button
+          immediateClick
           type="button"
           (click)="fileInput.click()"
           class="btn btn-primary">
@@ -17,8 +18,8 @@
           <i class="fa fa-image fa-4x align-middle"></i>
         </button>
         <input
-          hidden
           #fileInput
+          hidden
           formControlName="file"
           type="file"
           accept="image/*"
