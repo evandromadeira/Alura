@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { AlertService } from "./alert.service";
-import { Alert, AlertType } from "./alert";
+import { AlertService } from './alert.service';
+import { Alert, AlertType } from './alert';
 
 @Component({
   selector: 'ap-alert',

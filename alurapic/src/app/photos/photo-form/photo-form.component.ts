@@ -3,6 +3,8 @@ import { validateConfig } from '@angular/router/src/config';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AlertService } from '../../shared/components/alert/alert.service';
+import { UserService } from '../../core/user/user.service';
 import { PhotoService } from '../photo/photo.service';
 
 @Component({
@@ -17,8 +19,10 @@ export class PhotoFormComponent implements OnInit {
   file: File;
 
   constructor(
-    private formBuilder: FormBuilder,
     private photoService: PhotoService,
+    private alertService: AlertService,
+    private userService: UserService,
+    private formBuilder: FormBuilder,
     private router: Router
   ) { }
 
@@ -35,7 +39,14 @@ export class PhotoFormComponent implements OnInit {
     const allowComments = this.photoForm.get('allowComments').value;
     this.photoService
       .upload(description, allowComments, this.file)
-      .subscribe(() => this.router.navigate(['']))
+      .subscribe(
+        () => {
+          this.alertService.success("Upload complete!", true);
+          this.router.navigate(['/user', this.userService.getUserName()]);
+        },
+        err => {
+          this.alertService.warning('Could not upload the photo!', true)
+        });
   }
 
   handleFile(file: File) {
