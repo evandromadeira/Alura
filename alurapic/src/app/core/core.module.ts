@@ -30,6 +30,4 @@ import { FooterComponent } from './footer/footer.component';
     }
   ]
 })
-export class CoreModule {
-
-}
+export class CoreModule { }

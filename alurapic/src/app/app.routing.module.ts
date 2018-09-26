@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { AuthGuard } from './core/auth/auth.guard';
-import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 
 const routes: Routes = [
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'p/:photoId',
-    component: PhotoDetailsComponent,
+    component: PhotoDetailsComponent
   },
   {
     path: 'not-found',
