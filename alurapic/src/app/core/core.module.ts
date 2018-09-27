@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+import { ShowIfLoggedModule } from '../shared/directives/show-if-logged/show-if-logged.module';
 import { LoadingModule } from '../shared/components/loading/loading.module';
 import { AlerteModule } from '../shared/components/alert/alert.module';
 import { MenuModule } from '../shared/components/menu/menu.module';
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
+    ShowIfLoggedModule,
     LoadingModule,
     CommonModule,
     RouterModule,
