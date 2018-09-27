@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: 'not-found'
+    redirectTo: 'not-found'
   }
 ];
 
