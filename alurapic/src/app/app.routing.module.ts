@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
+import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
@@ -41,6 +42,13 @@ const routes: Routes = [
     component: PhotoDetailsComponent,
     data: {
       title: 'Photo detail'
+    }
+  },
+  {
+    path: 'error',
+    component: GlobalErrorComponent,
+    data: {
+      title: 'Error'
     }
   },
   {
