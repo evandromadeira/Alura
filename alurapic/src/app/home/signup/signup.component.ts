@@ -5,6 +5,7 @@ import { validateConfig } from '@angular/router/src/config';
 import { PlatformDetectorService } from '../../core/platform-detector/platform-detecor.service';
 import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { lowerCaseValidator } from '../../shared/validators/lower-case.validator';
+import { userNamePasswordValidator } from './username-password.validator';
 import { SignUpService } from './signup.service';
 import { Router } from '@angular/router';
 import { NewUser } from './signup';
@@ -59,6 +60,9 @@ export class SignUpComponent implements OnInit {
           Validators.maxLength(14)
         ]
       ]
+    },
+    {
+      validator: userNamePasswordValidator
     });
 
     this.platformDetectorService.isPlatformBrowser() &&
@@ -66,12 +70,14 @@ export class SignUpComponent implements OnInit {
   }
 
   signup() {
-    const newUser = this.signupForm.getRawValue() as NewUser;
-    this.signUpService
-      .signup(newUser)
-      .subscribe(
-        () => this.router.navigate(['']),
-        err => console.log(err)
-      );
+    if (this.signupForm.valid && !this.signupForm.pending) {
+      const newUser = this.signupForm.getRawValue() as NewUser;
+      this.signUpService
+        .signup(newUser)
+        .subscribe(
+          () => this.router.navigate(['']),
+          err => console.log(err)
+        );
+    }
   }
 }
